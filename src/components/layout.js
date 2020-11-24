@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Helmet from 'react-helmet'
 import { Global, css } from "@emotion/core";
 import Header from './header';
 
 const Layout = (props) => {
     return (
-        <>
+        <Fragment>
             <Global 
                 styles={css`
                     html {
@@ -47,7 +47,7 @@ const Layout = (props) => {
             </Helmet>
             <Header />
             {props.children}
-        </>
+        </Fragment>
     )
 }
 

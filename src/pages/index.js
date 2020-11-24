@@ -7,7 +7,7 @@ import ContenidoInicio from "../components/contenidoInicio";
 const IndexPage = () => (
   <Layout>
     <ImagenHotel />
-  <ContenidoInicio />
+    <ContenidoInicio />
   </Layout>
 )
 
