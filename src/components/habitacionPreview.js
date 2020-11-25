@@ -30,8 +30,16 @@ const HabitacionPreview = ({ habitacion }) => {
             <Image
             fluid={imagen.fluid}
             />
-            <div>
-                <h3>{titulo}</h3>
+            <div
+            css={css`
+                padding: 3rem;
+
+            `}
+            >
+                <h3
+                    css={css`
+                    font-size: 3rem;`}
+                >{titulo}</h3>
                 <p>{contenido}</p>
                 <Boton to={slug}>Ver Habitación</Boton>
             </div>
