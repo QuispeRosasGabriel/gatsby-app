@@ -1,6 +1,4 @@
-const { graphql } = require("gatsby")
-
-exports.createPages = async({ actions, grapql, reporter}) => {
+exports.createPages = async({ actions, graphql, reporter}) => {
     const resultado = await graphql(`
     query {
         allDatoCmsHabitacion {
@@ -21,7 +19,11 @@ exports.createPages = async({ actions, grapql, reporter}) => {
 
     habitaciones.forEach(habitacion => {
         actions.createPage({
-            
+            path: habitacion.slug,
+            component: require.resolve('./src/components/habitaciones.js'),
+            context: {
+                slug: habitacion.slug,
+            },
         });
     });
 }
