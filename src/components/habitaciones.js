@@ -1,5 +1,7 @@
 import { graphql } from 'gatsby'
 import React from 'react'
+import Layout from '../components/layout';
+import Image from 'gatsby-image';
 
 export const query = graphql`
 	query($slug: String!){
@@ -19,11 +21,18 @@ export const query = graphql`
 }
 `;
 
-const HabitacionTemplate = ({data}) => {
+const HabitacionTemplate = ({ data: { allDatoCmsHabitacion: { nodes } } }) => {
+
+    const { titulo, contenido, imagen } = nodes[0];
+
     return (
-        <div>
-            Habitacion.js
-        </div>
+        <Layout>
+            <main>
+                <h1>{titulo}</h1>
+                <p>{contenido}</p>
+                <Image fluid={imagen.fluid}></Image>
+            </main>
+        </Layout>
     )
 }
 
